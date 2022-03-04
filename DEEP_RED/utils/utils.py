@@ -248,7 +248,7 @@ def matplot_plot_graphs(graphs, x_labels, y_labels):
         plt.ylabel(y_labels[i], multialignment='center')
     plt.show()
 
- def plot_psnr(psnr):
+def plot_psnr(psnr):
     table = psnr[psnr>0]
     fig = plt.figure()
     ax = plt.axes()
