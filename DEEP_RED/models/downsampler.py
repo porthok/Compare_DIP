@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 import torch.nn as nn
-from utils.utils import fspecial_gauss
+from DEEP_RED.utils.utils import fspecial_gauss
 
 class Downsampler(nn.Module):
     """
