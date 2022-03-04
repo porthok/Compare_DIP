@@ -4,7 +4,7 @@ import torch
 import PIL
 from PIL import Image
 from skimage.metrics import peak_signal_noise_ratio
-from utils.data import Data
+from DEEP_RED.utils.data import Data
 
 
 # ---- Scaling image ---- # 
@@ -61,6 +61,12 @@ def compare_PSNR(org, est, on_y=False, gray_scale=False):
         return peak_signal_noise_ratio(np.mean(org, axis=0), np.mean(est, axis=0))
     return peak_signal_noise_ratio(org, est)
 
+def ComputePSNR(orig_im,est_im):
+
+    err = np.sqrt(np.mean((orig_im-est_im)**2))
+    out_psnr = 20*np.log10(np.max(orig_im)/err) 
+    
+    return out_psnr 
 
 def load_and_compare_psnr(fclean, fnoisy, crop_factor=1, on_y=False, eng=None):
     # matlab:
@@ -242,6 +248,12 @@ def matplot_plot_graphs(graphs, x_labels, y_labels):
         plt.ylabel(y_labels[i], multialignment='center')
     plt.show()
 
+ def plot_psnr(psnr):
+
+  table = psnr[psnr>0]
+  fig = plt.figure()
+  ax = plt.axes()
+  ax.plot(table);
 
 # --------  numpy gray to color -----
 def np_gray_to_color(img):
