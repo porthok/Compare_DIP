@@ -1,5 +1,5 @@
-from utils.utils import *
-from models.downsampler import Downsampler
+from DEEP_RED.utils.utils import *
+from DEEP_RED.models.downsampler import Downsampler
 
 
 # - blur image - exactly like the NCSR is doing it - 
