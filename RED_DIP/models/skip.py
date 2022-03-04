@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from RED_DIP.common import *
+from RED_DIP.models.common import *
 
 def get_net(input_depth, pad, upsample_mode, n_channels=3, act_fun='LeakyReLU', skip_n33d=128, skip_n33u=128, skip_n11=4, num_scales=5, downsample_mode='stride'):
 
