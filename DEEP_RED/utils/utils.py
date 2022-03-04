@@ -249,11 +249,10 @@ def matplot_plot_graphs(graphs, x_labels, y_labels):
     plt.show()
 
  def plot_psnr(psnr):
-
-  table = psnr[psnr>0]
-  fig = plt.figure()
-  ax = plt.axes()
-  ax.plot(table);
+    table = psnr[psnr>0]
+    fig = plt.figure()
+    ax = plt.axes()
+    ax.plot(table);
 
 # --------  numpy gray to color -----
 def np_gray_to_color(img):
